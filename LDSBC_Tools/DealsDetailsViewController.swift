@@ -37,8 +37,8 @@ class DealsDetailsViewController: UIViewController {
         // Create format for time.
         let timeFormatter = NSDateFormatter()
         // Set custom style.
-        dateFormatter.dateFormat = "MMM d, h:mm a"
-        timeFormatter.dateFormat = "h:mm a"
+        dateFormatter.dateFormat = "MMM d"
+        //timeFormatter.dateFormat = "h:mm a"
         // Set time zone.
         dateFormatter.timeZone = NSTimeZone(forSecondsFromGMT: +0)
         timeFormatter.timeZone = NSTimeZone(forSecondsFromGMT: +0)

@@ -13,6 +13,8 @@ import Foundation
 
 class EventsDetailsViewController: UIViewController, EKEventEditViewDelegate {
 
+    @IBOutlet weak var image: UIImageView!
+    
     @IBOutlet weak var namelabel: UILabel!
     
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -53,6 +55,13 @@ class EventsDetailsViewController: UIViewController, EKEventEditViewDelegate {
         descriptionLabel.text = currentEvent?.description
         dateTimeLabel.text = stringDate
         locationLabel.text = currentEvent?.location
+        
+        // Cast image from PFFile to UIImage.
+        currentEvent?.image.getDataInBackgroundWithBlock {(date, error) -> Void in
+            if let image = UIImage(data: date!) {
+                self.image.image = image
+            }
+        }
     }
 
     // Add to calendar button.
@@ -95,6 +104,12 @@ class EventsDetailsViewController: UIViewController, EKEventEditViewDelegate {
             return
         }
     }
+    
+    
+    @IBAction func websiteButton(sender: AnyObject) {
+    }
+    
+    
     
     // Function to handle the actions from the EventEditViewController.
     func eventEditViewController(controller: EKEventEditViewController,

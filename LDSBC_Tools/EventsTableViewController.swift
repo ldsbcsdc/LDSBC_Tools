@@ -113,11 +113,13 @@ class EventsTableViewController: UITableViewController {
                     // Loop through all objects.
                     for object in objects {
                         // Create local object with data from Parse object.
-                        var newEvent = event(name : (object.objectForKey("eventName") as! String),
+                        var newEvent = event(image : (object.objectForKey("image") as! PFFile),
+                            name : (object.objectForKey("eventName") as! String),
                             description : (object.objectForKey("description") as! String),
                             startDate : (object.objectForKey("startDate") as! NSDate),
                             endDate : (object.objectForKey("endDate") as! NSDate),
-                            location : (object.objectForKey("location") as! String))
+                            location : (object.objectForKey("location") as! String),
+                            website : (object.objectForKey("website") as? String)!)
                         
                         
                         // Set custom style.

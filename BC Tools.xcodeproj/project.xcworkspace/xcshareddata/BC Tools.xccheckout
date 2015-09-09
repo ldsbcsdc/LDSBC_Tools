@@ -10,29 +10,29 @@
 	<string>BC Tools</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>1157327CBCBFA33656567AF0D07E419DB29060DC</key>
-		<string>https://bitbucket.org/sdcstudenttechnology/ldsbc-tools.git</string>
+		<key>940AF20F0FFC29A2E68D88E47F430D5234B123F0</key>
+		<string>https://github.com/ldsbcsdc/LDSBC_Tools.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>LDSBC_Tools/BC Tools.xcodeproj</string>
+	<string>BC Tools.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>1157327CBCBFA33656567AF0D07E419DB29060DC</key>
-		<string>../../..</string>
+		<key>940AF20F0FFC29A2E68D88E47F430D5234B123F0</key>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://bitbucket.org/sdcstudenttechnology/ldsbc-tools.git</string>
+	<string>https://github.com/ldsbcsdc/LDSBC_Tools.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>1157327CBCBFA33656567AF0D07E419DB29060DC</string>
+	<string>940AF20F0FFC29A2E68D88E47F430D5234B123F0</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>1157327CBCBFA33656567AF0D07E419DB29060DC</string>
+			<string>940AF20F0FFC29A2E68D88E47F430D5234B123F0</string>
 			<key>IDESourceControlWCCName</key>
 			<string>LDSBC_Tools</string>
 		</dict>

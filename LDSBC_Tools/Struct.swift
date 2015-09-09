@@ -19,11 +19,13 @@ struct department {
 }
 
 struct event {
+    var image : PFFile
     var name : String
     var description : String
     var startDate : NSDate
     var endDate : NSDate
     var location : String
+    var website : String
     
 }
 
