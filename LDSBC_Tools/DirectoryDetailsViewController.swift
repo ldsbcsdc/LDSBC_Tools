@@ -24,7 +24,20 @@ class DirectoryDetailsViewController: UIViewController, MFMailComposeViewControl
     @IBOutlet weak var phoneIcon: UIImageView!
     @IBOutlet weak var emailIcon: UIImageView!
     @IBOutlet weak var websiteImage: UIImageView!
-   
+    
+    // Constraints outlets.
+    @IBOutlet weak var locationTop: NSLayoutConstraint!
+    @IBOutlet weak var phoneTop: NSLayoutConstraint!
+    @IBOutlet weak var emailTop: NSLayoutConstraint!
+    
+    // Height constraints
+    @IBOutlet weak var locationHeight: NSLayoutConstraint!
+    @IBOutlet weak var phoneHeight: NSLayoutConstraint!
+    @IBOutlet weak var emailHeight: NSLayoutConstraint!
+    
+    
+    
+    
     // Class variables.
     //object to hold data from parent view controller.
     var currentDepart : department?
@@ -41,39 +54,45 @@ class DirectoryDetailsViewController: UIViewController, MFMailComposeViewControl
         if currentDepart?.location != "" {
             locationLabel.text = currentDepart?.location
             locationLabel.hidden = false
-            //locationIcon.hidden = false
+            locationIcon.hidden = false
         } else {
             locationLabel.hidden = true
-            //locationIcon.hidden = true
+            locationIcon.hidden = true
+            locationHeight.constant = 0
+            locationTop.constant = 0
         }
         
         // Phone Button. Display only if field has content.
         if currentDepart?.phone != "" {
             phoneButtonLabel.setTitle(currentDepart?.phone, forState: UIControlState.Normal)
             phoneButtonLabel.hidden = false
-            //phoneIcon.hidden = false
+            phoneIcon.hidden = false
         } else {
             phoneButtonLabel.hidden = true
-            //phoneIcon.hidden = true
+            phoneIcon.hidden = true
+            phoneHeight.constant = 0
+            phoneTop.constant = 0
         }
         
         // Email button. Display only if field has content.
         if currentDepart?.email != "" {
             emailButton.setTitle(currentDepart?.email, forState: UIControlState.Normal)
             emailButton.hidden = false
-            //emailIcon.hidden = false
+            emailIcon.hidden = false
         } else {
             emailButton.hidden = true
-            //emailIcon.hidden = true
+            emailIcon.hidden = true
+            emailTop.constant = 0
+            emailHeight.constant = 0
         }
         
         // Website button. Display only if field has content.
         if currentDepart?.website == "" {
             websiteButton.hidden = true
-            //websiteImage.hidden = true
+            websiteImage.hidden = true
         } else {
             websiteButton.hidden = false
-            //websiteImage.hidden = false
+            websiteImage.hidden = false
         }
         
     }

@@ -70,7 +70,6 @@ class BCSAViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
     }
     
     // Link method for all buttons.

@@ -13,6 +13,7 @@ import Foundation
 
 class EventsDetailsViewController: UIViewController, EKEventEditViewDelegate {
 
+    
     @IBOutlet weak var image: UIImageView!
     
     @IBOutlet weak var namelabel: UILabel!
@@ -22,6 +23,8 @@ class EventsDetailsViewController: UIViewController, EKEventEditViewDelegate {
     @IBOutlet weak var dateTimeLabel: UILabel!
     
     @IBOutlet weak var locationLabel: UILabel!
+    
+    // Image icons outlets.
     
     // Class variables.
     // Object to hold data from parent view controller.
