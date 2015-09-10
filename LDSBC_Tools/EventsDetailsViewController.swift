@@ -13,18 +13,18 @@ import Foundation
 
 class EventsDetailsViewController: UIViewController, EKEventEditViewDelegate {
 
-    
+    // Labels
     @IBOutlet weak var image: UIImageView!
-    
     @IBOutlet weak var namelabel: UILabel!
-    
     @IBOutlet weak var descriptionLabel: UILabel!
-    
     @IBOutlet weak var dateTimeLabel: UILabel!
-    
     @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var websiteButton: UIButton!
+    
     
     // Image icons outlets.
+    @IBOutlet weak var websiteImage: UIImageView!
+    
     
     // Class variables.
     // Object to hold data from parent view controller.
@@ -47,24 +47,41 @@ class EventsDetailsViewController: UIViewController, EKEventEditViewDelegate {
         dateFormatter.timeZone = NSTimeZone(forSecondsFromGMT: +0)
         timeFormatter.timeZone = NSTimeZone(forSecondsFromGMT: +0)
         
-        
-        // Create date from object.
-        startDate = currentEvent!.startDate
-        endDate = currentEvent!.endDate
-        // Create string with start and end time.
-        let stringDate = dateFormatter.stringFromDate(startDate) + " to " + timeFormatter.stringFromDate(endDate)
-        // Set labels with values from object.
-        namelabel.text = currentEvent?.name
-        descriptionLabel.text = currentEvent?.description
-        dateTimeLabel.text = stringDate
-        locationLabel.text = currentEvent?.location
-        
+        // Add image.
         // Cast image from PFFile to UIImage.
         currentEvent?.image.getDataInBackgroundWithBlock {(date, error) -> Void in
             if let image = UIImage(data: date!) {
                 self.image.image = image
             }
         }
+        
+        // Add event name.
+        namelabel.text = currentEvent?.name
+        
+        // Add description.
+        descriptionLabel.text = currentEvent?.description
+        
+        // Create date from object.
+        startDate = currentEvent!.startDate
+        endDate = currentEvent!.endDate
+        // Create string with start and end time.
+        let stringDate = dateFormatter.stringFromDate(startDate) + " to " + timeFormatter.stringFromDate(endDate)
+        
+        // Add date.
+        dateTimeLabel.text = stringDate
+        
+        // Add location.
+        locationLabel.text = currentEvent?.location
+        
+        // Website button. Display only if field has content.
+        if currentEvent?.website != "" {
+            websiteButton.hidden = false
+            websiteImage.hidden = false
+        } else {
+            websiteButton.hidden = true
+            websiteImage.hidden = true
+        }
+       
     }
 
     // Add to calendar button.
@@ -110,8 +127,16 @@ class EventsDetailsViewController: UIViewController, EKEventEditViewDelegate {
     
     
     @IBAction func websiteButton(sender: AnyObject) {
+        getLink("\(currentEvent!.website)")
     }
     
+    
+    // Link method.
+    func getLink(linkString: String) {
+        let targetURL = NSURL(string: linkString)
+        let application = UIApplication.sharedApplication()
+        application.openURL(targetURL!);
+    }
     
     
     // Function to handle the actions from the EventEditViewController.
