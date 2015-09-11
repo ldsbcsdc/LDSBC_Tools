@@ -35,6 +35,8 @@ class EventsDetailsViewController: UIViewController, EKEventEditViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        namelabel.frame = CGRectMake(0,0,100,100)
 
         // Create format for date.
         let dateFormatter = NSDateFormatter()
