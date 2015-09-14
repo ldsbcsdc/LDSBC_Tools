@@ -95,12 +95,17 @@ class EventsDetailsViewController: UIViewController, EKEventEditViewDelegate {
         eventController.eventStore = store
         eventController.editViewDelegate = self
 
+        // Convert website string into NSURL format.
+        let stringUrl = currentEvent?.website
+        let url = NSURL(string: stringUrl!)
+        
         // create event with data from object.
         var event = EKEvent(eventStore: store)
         event.title = currentEvent?.name
         event.startDate = currentEvent?.startDate.dateByAddingTimeInterval(21600)
         event.endDate = currentEvent?.endDate.dateByAddingTimeInterval(21600)
         event.location = currentEvent?.location
+        event.URL = url
         event.notes = currentEvent?.description
         eventController.event = event
 
